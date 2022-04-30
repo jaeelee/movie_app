@@ -30,6 +30,10 @@ import {
 
 ```
 3. React router 6버전(react-router-dom 6 이상 버전)인 경우 gh-pages 배포 후, 빈화면이 나온다면 Route 컴포넌트의 path경로 앞에 ```process.env.PUBLIC_URL```을 추가
-```
+```javascript
 Route path={`${process.env.PUBLIC_URL}/`} element={< Home />}
+```
+혹은 Router컴퍼넌트 basename 속성으로 추가
+```javascript
+<Rouber basename={process.env.PUBLIC_URL}>
 ```
