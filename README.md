@@ -1,10 +1,11 @@
 # Movie App
 
 ## react-router
-1. 설치 : ```npm insall react-router-dom``` 
+### 1. 설치 
+```npm insall react-router-dom``` 
 OR 
 ```npm i react-router-dom@5.3.0```
-2. import 하기
+### 2. import 하기
 ```
 import {
   BrowserRouter as Router,
@@ -39,12 +40,4 @@ Route path={`${process.env.PUBLIC_URL}/`} element={< Home />}
 혹은 Router컴퍼넌트 basename 속성으로 추가
 ```javascript
 <Rouber basename={process.env.PUBLIC_URL}>
-```
-
-## API Key 숨기기
-API Key는 본잉늬 고유한 key이므로 노출시키지 않고 올리는 것이 보안상 좋다.
-React CRA 기반으로 작업을 한다면 dotenv를 사용해 API key를 숨길 수 있다.
-
-### 1. 최상위 디렉토리에 .env파일 만들기
-```
 ```
