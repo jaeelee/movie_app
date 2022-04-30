@@ -1,6 +1,8 @@
-import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react";;
+import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import styles from "./detail.module.css";
 // import { useCallback } from "react";
+
 function Detail() {
     const { id } = useParams(); // url에 사용한 변수의 값을 반환하는 함수
     const [movie, setMovie] = useState();
@@ -21,23 +23,31 @@ function Detail() {
             ).json();
             setMovie(json.data.movie);
             setLoading(false); // 로딩을 하지 않으면 데이터를 가져오지 못해서 에러 발생
+            console.log(json.data.movie);
         };
         getMovie();
     }, [id]);
 
     return (
         <div>
-            {loading ? <h1>Loading...</h1> : <div>{
+            {loading ? (
+                <div className={styles.loader}>
+                    <span>Loading...</span>
+                </div>
+            ) : <div className={styles.detail}>{
                 <div>
-                    <h1>{movie.title}</h1>
-                    <img src={movie.large_cover_image} alt={movie} />
-                    <div>Rating : {movie.rating}</div>
-                    <div>Genres :
-                        <ul>
+                    <img className={styles.detail__img} src={movie.medium_cover_image} alt={movie} />
+                    <div className={styles.detail__info}>
+                        <h3>{movie.title_long}</h3>
+                        <div>
+                            <img className={styles.detail__imdb} src={`${process.env.PUBLIC_URL}/img/IMDB.png`} alt="imdb" />
+                            {movie.rating}
+                        </div>
+                        <ul className={styles.detail__genres}>
                             {movie.genres.map((g) => <li key={g}>{g}</li>)}
                         </ul>
                     </div>
-                    <div>Year : {movie.year}</div>
+
                 </div>
             }
             </div>
