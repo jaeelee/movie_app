@@ -2,7 +2,7 @@
 
 # DEMO
 
-<img src="./img/mainScreen.png">
+[![moive-app](./img/mainScreen.png)](https://jaeelee.github.io/movie_app/)
 
 
 # DOCS
