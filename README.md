@@ -1,5 +1,12 @@
 # Movie App
 
+# DEMO
+
+<img src="./img/mainScreen.png">
+
+
+# DOCS
+
 ## react-router
 ### 1. 설치 
 ```npm insall react-router-dom``` 
